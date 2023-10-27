@@ -36,7 +36,7 @@ public class _02_RobotRace {
 				robots[i].move(ran.nextInt(50));
 				if (robots[i].getX()>700) {
 					robots[i].turn(-90);
-					robots[i].move(50);
+					robots[i].move(400);
 				}
 				
 //				if (robots[i].getY()<0) {

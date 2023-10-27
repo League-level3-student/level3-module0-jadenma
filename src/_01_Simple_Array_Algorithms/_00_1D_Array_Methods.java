@@ -5,7 +5,11 @@ public class _00_1D_Array_Methods {
     //   of the integers in the array being passed in
     public static int sumIntArray(int[] values) {
 
-        return 0;
+    	int sum=0;
+    	for (int i = 0; i<values.length; i++) {
+    		sum=sum+values[i];
+        }
+    	return sum;
     }
 
     //2. Complete the method so that it returns the average of all
