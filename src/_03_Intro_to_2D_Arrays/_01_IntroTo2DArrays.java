@@ -9,8 +9,9 @@ public class _01_IntroTo2DArrays {
         // 2. use two for loops to set all the elements in the 2D array to
         //    a different integer
         //    BE SURE TO USE THE ARRAY'S length VARIABLE
+    	
         for (int i = 0; i<array2d.length; i++) {
-        	for (int j = 0; j<array2d[i].length; i++) {
+        	for (int j = 0; j<array2d[i].length; j++) {
         		array2d[i][j] = (i+2)*(j+5);
         	}
         }
@@ -18,8 +19,8 @@ public class _01_IntroTo2DArrays {
         System.out.println(array2d[1][2]);
         // 4. set the third element from the second 1D array to a different
         //    value
-
+        array2d[1][2]= 0;
         // 5. print the element again and verify the value has changed
-
+        System.out.println(array2d[1][2]);
     }
 }

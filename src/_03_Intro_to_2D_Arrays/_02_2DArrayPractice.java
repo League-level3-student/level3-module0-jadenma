@@ -31,8 +31,13 @@ public class _02_2DArrayPractice {
      *          6, 7, 8
      */
     public Integer[][] test1() {
-        
-        return null;
+        Integer[][] array2d = new Integer[3][3];
+        for (int i=0; i<array2d.length; i++) {
+        	for (int j=0; j<array2d[i].length; j++) {
+        		array2d[i][j] = i;
+        	}
+        }
+        return array2d;
     }
     
     /*
@@ -41,8 +46,14 @@ public class _02_2DArrayPractice {
      *          "e", "f", "g", "e"
      */
     public String[][] test2() {
-        
-        return null;
+    	String[] array = {"a", "b", "c", "d", "e", "f", "g", "e"};
+        String[][] array2d = new String[2][4];
+        for (int i = 0; i<array2d.length;i++) {
+        	for (int j = 0; j<array2d[i].length; j++) {
+        		array2d[i][j]=array[i*array[i].length()+j];
+        	}
+        }
+        return array2d;
     }
     
     /*
@@ -54,7 +65,13 @@ public class _02_2DArrayPractice {
      *          true, false
      */
     public Boolean[][] test3() {
-        
+    	Boolean[] array = {true, false, false, false, false, true, true, true, true, false};
+        Boolean[][] array2d = new Boolean[5][2];
+        for (int i = 0; i<array2d.length; i++) {
+        	for (int j = 0; j<array2d[j].length; j++) {
+        		array2d[i][j]=array[i*array[i].length()+j];
+        	}
+        }
         return null;
     }
     
