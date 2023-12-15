@@ -25,6 +25,7 @@ public class Cell implements Drawable{
      * 1. Any live cell with fewer than two live nieghbours dies, as if caused
      * by underpopulation.
      * 
+     * 
      * 2. Any live cell with two or three live neighbours lives on to the next
      * generation.
      * 
@@ -37,6 +38,18 @@ public class Cell implements Drawable{
      */
     public void liveOrDie(int numNeighbors) {
 
+    	if (numNeighbors<2) {
+    		isAlive=false;
+    	}
+    	if (numNeighbors==2 ||numNeighbors==3) {
+    		isAlive=true;
+    	}
+    	if (numNeighbors>3) {
+    		isAlive=false;
+    	}
+    	if (numNeighbors==3 && isAlive==false) {
+    		isAlive=true;
+    	}
     }
 
     public int getX() {
