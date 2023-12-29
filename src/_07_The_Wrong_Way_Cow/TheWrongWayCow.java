@@ -60,30 +60,33 @@ public class TheWrongWayCow {
         // head (letter 'c') of the wrong way cow!
         for (int i = 0; i<field.length; i++) {
         	for (int j = 0; j<field[i].length; j++) {
-        		if (field[i][j]=='c' && field[i+1][j]=='o') {
+        		if (i<field.length && field[i][j]=='c' && field[i+1][j]=='o') {
         			northFacing++;
         		}
-        		else if (field[i][j] == 'c' && field[i-1][j] == 'o') {
+        		else if (i>0 && field[i][j] == 'c' && field[i-1][j] == 'o') {
         			southFacing++;
         		}
-        		else if (field[i][j] == 'c' && field[i][j+1] == 'o') {
+        		else if (j<field[i].length && field[i][j] == 'c' && field[i][j+1] == 'o') {
         			westFacing++;
         		}
-        		else if (field[i][j] == 'c' && field[i][j-1] == 'o') {
+        		else if (j>0 && field[i][j] == 'c' && field[i][j-1] == 'o') {
         			EastFacing++;
         		}
         		if (southFacing == 1) {
-        			cowIndex = {j, i};
-        			return 
+        			cowIndex = new int[]{j, i};
+        			return cowIndex;
         		}
         		else if (northFacing ==1) {
-        			
+        			cowIndex = new int[]{j, i};
+        			return cowIndex;
         		}
         		else if (westFacing ==1) {
-        			
+        			cowIndex = new int[]{j, i};
+        			return cowIndex;
         		}
         		else if (EastFacing ==1) {
-        			
+        			cowIndex = new int []{j, i};
+        			return cowIndex;
         		}
         	}
         }

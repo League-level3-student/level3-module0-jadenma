@@ -32,7 +32,7 @@ public class WorldPanel extends JPanel implements MouseListener, ActionListener 
 
         // 2. Calculate the cell size.
 
-        this.cellSize=w;
+        this.cellSize=w/cpr;
         // 3a. Initialize the cell array to the appropriate size.
 
         cells = new Cell[h][w];
@@ -42,7 +42,7 @@ public class WorldPanel extends JPanel implements MouseListener, ActionListener 
 
         for (int i = 0; i <cells.length; i++) {
         	for (int j = 0; j < cells[i].length; j++) {
-        		cells[i][j] = new Cell(h, w, cellSize);
+        		cells[i][j] = new Cell(i*cellSize, j*cellSize, cellSize);
         	}
         }
     }
@@ -184,11 +184,12 @@ public class WorldPanel extends JPanel implements MouseListener, ActionListener 
         //    have to determine the cell that was clicked from the pixel
         //    location and toggle the 'isAlive' variable for that cell.
 
-    	Cell cell = cells[(e.getY()/cellSize)][e.getX()/cellSize];
-    	if (cell.isAlive=true) {
+
+    	Cell cell = cells[(e.getX()/cellSize)][e.getY()/cellSize];
+    	if (cell.isAlive==true) {
     		cell.isAlive=false;
     	}
-    	if (cell.isAlive=false) {
+    	else if (cell.isAlive==false) {
     		cell.isAlive=true;
     	}
     //	pixels[(mouseY/pixelHeight)][mouseX/pixelWidth].color = color;
