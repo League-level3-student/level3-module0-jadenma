@@ -50,46 +50,69 @@ package _07_The_Wrong_Way_Cow;
 
 public class TheWrongWayCow {
 
-	static int cowIndex[] = new int[2];
-	static int southFacing = 0;
-	static int northFacing = 0;
-	static int EastFacing = 0 ;
-	static int westFacing = 0 ;
+	
+	
     public static int[] findWrongWayCow(final char[][] field) {
+    	int cowIndex[] = new int[2];
+    	int southFacing = 0;
+    	int northFacing = 0;
+    	int EastFacing = 0 ;
+    	int westFacing = 0 ;
+    	int northX=0;
+    	int northY=0;
+    	int southX=0;
+    	int southY=0;
+    	int westX=0;
+    	int westY=0;
+    	int eastX=0;
+    	int eastY=0;
         // Fill in the code to return the [col, row] coordinate position of the
         // head (letter 'c') of the wrong way cow!
         for (int i = 0; i<field.length; i++) {
         	for (int j = 0; j<field[i].length; j++) {
-        		if (i<field.length && field[i][j]=='c' && field[i+1][j]=='o') {
+        		if (i<field.length-2 && field[i][j]=='c' && field[i+1][j]=='o') {
         			northFacing++;
+        			northX=j;
+        			northY=i;
         		}
-        		else if (i>0 && field[i][j] == 'c' && field[i-1][j] == 'o') {
+        		else if (i>2 && field[i][j] == 'c' && field[i-1][j] == 'o') {
         			southFacing++;
+        			southX=j;
+        			southY=i;
         		}
-        		else if (j<field[i].length && field[i][j] == 'c' && field[i][j+1] == 'o') {
+        		else if (j<field[i].length-2 && field[i][j] == 'c' && field[i][j+1] == 'o') {
         			westFacing++;
+        			westX=j;
+        			westY=i;
         		}
-        		else if (j>0 && field[i][j] == 'c' && field[i][j-1] == 'o') {
+        		else if (j>2 && field[i][j] == 'c' && field[i][j-1] == 'o') {
         			EastFacing++;
-        		}
-        		if (southFacing == 1) {
-        			cowIndex = new int[]{j, i};
-        			return cowIndex;
-        		}
-        		else if (northFacing ==1) {
-        			cowIndex = new int[]{j, i};
-        			return cowIndex;
-        		}
-        		else if (westFacing ==1) {
-        			cowIndex = new int[]{j, i};
-        			return cowIndex;
-        		}
-        		else if (EastFacing ==1) {
-        			cowIndex = new int []{j, i};
-        			return cowIndex;
+        			eastX=j;
+        			eastY=i;
         		}
         	}
         }
+        if (southFacing == 1) {
+        	cowIndex = new int[]{southX, southY};
+        	System.out.println(cowIndex[0] + " " + cowIndex[1]);
+        	return cowIndex;
+        }
+        else if (northFacing ==1) {
+        	cowIndex = new int[]{northX, northY};
+        	System.out.println(cowIndex[0] + " " + cowIndex[1]);
+        	return cowIndex;
+        }
+        else if (westFacing ==1) {
+        	cowIndex = new int[]{westX, westY};
+        	System.out.println(cowIndex[0] + " " + cowIndex[1]);
+        	return cowIndex;
+        }
+        else if (EastFacing ==1) {
+        	cowIndex = new int[]{eastX, eastY};
+        	System.out.println(cowIndex[0] + " " + cowIndex[1]);
+        	return cowIndex;
+        }
+        System.out.println("return null");
         return null;
     }
 }
